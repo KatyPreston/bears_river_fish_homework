@@ -8,6 +8,9 @@ class RiverTest < MiniTest::Test
 
   def setup
     @river = River.new("Chilko", ["Salmon", "Goldfish", "Zebra"])
+    @fish1 = Fish.new("Salmon")
+    @fish2 = Fish.new("Zebra")
+
   end
 
   def test_get_river_name
@@ -18,10 +21,10 @@ class RiverTest < MiniTest::Test
     assert_equal(3, @river.number_of_fish_in_river)
   end
 
-  def test_lose_fish
-    @fish = Fish.new("Zebra")
-    @river.lose_fish(@fish)
-    assert_equal(2, @river.number_of_fish_in_river)
+  def test_lose_fish_when_eaten
+    @river.lose_fish(@fish1)
+    @river.lose_fish(@fish2)
+    assert_equal(1, @river.number_of_fish_in_river)
   end
 
 end

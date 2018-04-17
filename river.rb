@@ -10,9 +10,10 @@ class River
     @fish.length
   end
 
-  def lose_fish(fish)
-    @fish.delete(fish)
+  def lose_fish(name)
+    @fish.delete(name)
   end
+
 
 
 end
