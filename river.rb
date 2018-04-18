@@ -9,9 +9,9 @@ class River
   def number_of_fish_in_river
     @fish.length
   end
-
-  def lose_fish(name)
-    @fish.delete(name)
+  #
+  def lose_fish(fish)
+    @fish.delete(fish)
   end
 
 
